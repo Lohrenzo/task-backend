@@ -38,7 +38,7 @@ export const errorHandler = (err: Error, req: Request, res: Response, next: Next
  */
 export const corsHandler = (req: Request, res: Response, next: NextFunction) => {
     const allowedOrigins = [process.env.CLIENT_URL || 'http://localhost:5173'];
-    const origin = req.headers.origin;
+    const origin = req.headers.referer || req.headers.origin;
     if (origin && allowedOrigins.includes(origin)) {
         res.header('Access-Control-Allow-Origin', origin);
     }
