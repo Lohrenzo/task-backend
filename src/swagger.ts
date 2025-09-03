@@ -16,9 +16,13 @@ const swaggerOptions = {
             description: 'API documentation for HMCTS Backend',
         },
         servers: [
+            // {
+            //     url: `http://localhost:${process.env.PORT || 3000}`,
+            //     description: 'Local server'
+            // },
             {
-                url: `http://localhost:${process.env.PORT || 3000}`,
-                description: 'Local server'
+                url: `${process.env.API_URL}`,
+                description: 'Production server'
             }
         ],
         components: {
