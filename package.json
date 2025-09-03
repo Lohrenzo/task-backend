@@ -5,8 +5,12 @@
   "type": "module",
   "scripts": {
     "start": "tsx server.ts",
+    "build": "tsc",
+    "prebuild": "npm install",
     "dev": "tsx --watch --env-file=.env server",
-    "test": "npx jest --watchAll"
+    "predev": "npm install",
+    "test": "npx jest --watchAll",
+    "postbuild": "cp package.json dist/package.json && cp package-lock.json dist/package-lock.json"
   },
   "author": "Laurence Fubara",
   "license": "ISC",
